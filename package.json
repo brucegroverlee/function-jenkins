@@ -1,0 +1,22 @@
+{
+  "name": "function-jenkins",
+  "version": "1.0.0",
+  "description": "Functions jenkins =================",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brucegroverlee/function-jenkins.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brucegroverlee/function-jenkins/issues"
+  },
+  "homepage": "https://github.com/brucegroverlee/function-jenkins#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
