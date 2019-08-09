@@ -1,0 +1,25 @@
+pipeline {
+    agent {
+        docker {
+            image 'google/cloud-sdk:alpine'
+            args '-p 3000:3000'
+        }
+    }
+    environment { 
+        CI = 'true'
+        GCLOUD_SERVICE_ACCOUNT = credentials('gcloud-service-account') 
+        SHERPON_DEVELOPMENT_PROJECT_ID = credentials('sherpon-development-project-id') 
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh './jenkins/scripts/test.sh'
+            }
+        }
+        stage('Deploy-development') { 
+            steps {
+                sh './jenkins/scripts/development.deploy.sh' 
+            }
+        }
+    }
+}
