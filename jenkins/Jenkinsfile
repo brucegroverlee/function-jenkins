@@ -7,7 +7,7 @@ pipeline {
     }
     environment { 
         CI = 'true'
-        GCLOUD_SERVICE_ACCOUNT = credentials('gcloud-service-account') 
+        SHERPON_DEVELOPMENT_SERVICE_ACCOUNT_KEY = credentials('sherpon-development-service-account-key') 
         SHERPON_DEVELOPMENT_PROJECT_ID = credentials('sherpon-development-project-id') 
     }
     stages {
