@@ -11,6 +11,11 @@ pipeline {
         SHERPON_DEVELOPMENT_PROJECT_ID = credentials('sherpon-development-project-id') 
     }
     stages {
+        stage('Install') {
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('Test') {
             steps {
                 sh './jenkins/scripts/test.sh'
