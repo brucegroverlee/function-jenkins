@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'google/cloud-sdk:alpine'
+            image 'boiyaa/google-cloud-sdk-nodejs'
             args '-p 3000:3000'
         }
     }
@@ -11,6 +11,11 @@ pipeline {
         SHERPON_DEVELOPMENT_PROJECT_ID = credentials('sherpon-development-project-id') 
     }
     stages {
+        stage('Test') {
+            steps {
+                sh './jenkins/scripts/test.sh'
+            }
+        }
         stage('Deploy-development') { 
             steps {
                 sh './jenkins/scripts/development.deploy.sh' 
